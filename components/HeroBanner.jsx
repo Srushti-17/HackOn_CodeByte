@@ -1,4 +1,5 @@
 import React from "react";
+import {useState} from "react";
 import Link from "next/link";
 
 const HeroBanner = ({ heroBanner }) => {
@@ -7,11 +8,10 @@ const HeroBanner = ({ heroBanner }) => {
     try {
       const response = await fetch("http://localhost:8000/run-crew");
       const data = await response.json();
-      console.log(data); // Handle response data
-      return data; // Return for further use
+      console.log(data);
+      router.push("/run-crew"); // Redirect to API route
     } catch (error) {
       console.error("Error:", error);
-      return null; // Return null on error
     }
   };
 
@@ -26,14 +26,13 @@ const HeroBanner = ({ heroBanner }) => {
         />
 
         <div>
-          <Link
-            href="/product"
-          // href={`/product/${heroBanner.product}`}
-          >
-            <button type="button" onClick={crew()}>
+          
+          <Link href={"/run-crew"}>
+            <button type="button" onClick={crew}>
               Explore AI Agents
-            </button>
+            </button> 
           </Link>
+  
           <div className="desc">
             <h5>AI Meets Medicine</h5>
             <p>Smarter compounds. Faster cures. Powered by AI.</p>
