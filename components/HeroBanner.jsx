@@ -17,7 +17,12 @@ const HeroBanner = ({ heroBanner }) => {
             href="/product"
             // href={`/product/${heroBanner.product}`}
           >
-            <button type="button">Explore AI Agents</button>
+            <button type="button" onClick={fetch("http://localhost:8000/run-crew")
+                  .then(response => response.json())
+                  .then(data => console.log(data))
+                  .catch(error => console.error("Error:", error))}>
+                    Explore AI Agents
+            </button>
           </Link>
           <div className="desc">
             <h5>AI Meets Medicine</h5>
