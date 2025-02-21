@@ -2,6 +2,19 @@ import React from "react";
 import Link from "next/link";
 
 const HeroBanner = ({ heroBanner }) => {
+
+  const crew = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/run-crew");
+      const data = await response.json();
+      console.log(data); // Handle response data
+      return data; // Return for further use
+    } catch (error) {
+      console.error("Error:", error);
+      return null; // Return null on error
+    }
+  };
+
   return (
     <div className="hero-banner-container">
       <div>
@@ -15,13 +28,10 @@ const HeroBanner = ({ heroBanner }) => {
         <div>
           <Link
             href="/product"
-            // href={`/product/${heroBanner.product}`}
+          // href={`/product/${heroBanner.product}`}
           >
-            <button type="button" onClick={fetch("http://localhost:8000/run-crew")
-                  .then(response => response.json())
-                  .then(data => console.log(data))
-                  .catch(error => console.error("Error:", error))}>
-                    Explore AI Agents
+            <button type="button" onClick={crew()}>
+              Explore AI Agents
             </button>
           </Link>
           <div className="desc">
