@@ -20,8 +20,8 @@ const HeroBanner = ({ heroBanner }) => {
             <button type="button">Explore AI Agents</button>
           </Link>
           <div className="desc">
-            <h5>Curated AI Agents</h5>
-            <p>Find agents tailored to your needs, built by top developers.</p>
+            <h5>AI Meets Medicine</h5>
+            <p>Smarter compounds. Faster cures. Powered by AI.</p>
           </div>
         </div>
       </div>
