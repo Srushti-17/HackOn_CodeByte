@@ -1,0 +1,17 @@
+research_task:
+  description: >
+    Analyse effectiveness of existing chemical drugs in {topic} for treatment.
+    Analyze large datasets of chemical compounds, medical research, and patient outcomes to predict which molecules have the highest potential for developing effective treatments.
+    
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about {topic}.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Review the gathered insights and expand each point into a comprehensive section. 
+    Ensure the report is structured, informative, and contains all crucial details for better understanding.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information. 
+    Formatted as markdown without '```'.
+  agent: reporting_analyst

@@ -18,7 +18,7 @@ const HeroBanner = ({ heroBanner }) => {
   return (
     <div className="hero-banner-container">
       <div>
-        <h1>AI AGENT STORE</h1>
+        <h1>MedsAI – Drug Discovery</h1>
         <img
           src="https://i.pinimg.com/originals/4b/cb/1f/4bcb1fb72d1d08efa44efa5ceb712ec7.gif"
           alt="headphones"

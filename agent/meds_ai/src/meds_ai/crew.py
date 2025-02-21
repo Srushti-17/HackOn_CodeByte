@@ -6,8 +6,8 @@ from crewai.project import CrewBase, agent, crew, task
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
 @CrewBase
-class Medsai():
-	"""Medsai crew"""
+class MedsAi():
+	"""MedsAi crew"""
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -23,13 +23,6 @@ class Medsai():
 			config=self.agents_config['researcher'],
 			verbose=True
 		)
-	
-	@agent
-	def predictor(self) -> Agent:
-		return Agent(
-			config=self.agents_config['predictor'],
-			verbose=True
-		)
 
 	@agent
 	def reporting_analyst(self) -> Agent:
@@ -42,27 +35,21 @@ class Medsai():
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
 	@task
-	def research(self) -> Task:
+	def research_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['research']
+			config=self.tasks_config['research_task'],
 		)
 
 	@task
-	def predict_effectiveness(self) -> Task:
+	def reporting_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['predict_effectiveness']
-		)
-
-	@task
-	def generate_report(self) -> Task:
-		return Task(
-			config=self.tasks_config['generate_report'],
+			config=self.tasks_config['reporting_task'],
 			output_file='report.md'
 		)
 
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the Medsai crew"""
+		"""Creates the MedsAi crew"""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 

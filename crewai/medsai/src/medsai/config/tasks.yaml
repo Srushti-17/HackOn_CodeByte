@@ -1,17 +1,26 @@
-research_task:
-  description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
-  expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+tasks:
+  research:
+    description: >
+      Analyze existing chemical compounds using Graph Neural Networks (GNNs) and Random Forest.
+      Extract key molecular properties, toxicity levels, and potential pharmaceutical applications.
+    input: >
+      Acetylsalicylic acid is a member of the class of benzoic acids that is salicylic acid in which the hydrogen that is attached to the phenolic hydroxy group has been replaced by an acetoxy group. A non-steroidal anti-inflammatory drug with cyclooxygenase inhibitor activity. It has a role as a non-steroidal anti-inflammatory drug, a non-narcotic analgesic, a platelet aggregation inhibitor, an antipyretic, a cyclooxygenase 2 inhibitor, a cyclooxygenase 1 inhibitor, a prostaglandin antagonist, a teratogenic agent, an anticoagulant, a plant activator, an EC 1.1.1.188 (prostaglandin-F synthase) inhibitor, a drug allergen and a geroprotector. It is a member of benzoic acids, a member of salicylates and a member of phenyl acetates. It is functionally related to a salicylic acid. It is a conjugate acid of an acetylsalicylate.
+    expected_output: >
+      A structured dataset containing molecular descriptors, toxicity scores, and potential classifications.
+    agent: researcher
 
-reporting_task:
-  description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
-  expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+  predict_effectiveness:
+    description: >
+      Use ChemBERTa and XGBoost to predict the effectiveness of selected compounds against specific diseases.
+      Identify high-potential drug candidates for further testing.
+    expected_output: >
+      A ranked list of compounds with predicted success rates and recommended next steps.
+    agent: predictor
+
+  generate_report:
+    description: >
+      Review the analysis and predictions, and compile a structured report summarizing findings.
+      The report should include key compound properties, predicted effectiveness, and recommendations.
+    expected_output: >
+      A markdown report detailing research findings, structured into sections with clear explanations.
+    agent: reporting_analyst

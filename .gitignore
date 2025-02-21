@@ -42,3 +42,7 @@ yarn-error.log*
 #crewai 
 .venv/
 __pycache__/
+
+crewai/medsai/
+crewai/medsai/src/
+crewai/medsai/medsai/__pycache__/
